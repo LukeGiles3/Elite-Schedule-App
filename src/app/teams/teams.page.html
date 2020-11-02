@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Teams</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group *ngFor="let division of teams">
+    <ion-item-divider color="secondary">{{ division.divisionName }}</ion-item-divider>
+    <ion-item *ngFor="let team of division.divisionTeams" (click)="itemTapped(team)">
+      <ion-label>{{ team.name }}</ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>
